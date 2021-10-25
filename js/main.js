@@ -11,5 +11,12 @@ function renderImage(event) {
   } else {
     $url.src = 'images/placeholder-image-square.jpg';
   }
+}
+var $entryForm = document.querySelector('#entry-form');
+
+$entryForm.addEventListener('submit', formSubmit);
+
+function formSubmit(event) {
+  event.preventDefault();
 
 }
