@@ -38,19 +38,36 @@
         <form>
           <div class="row mb-1rem">
             <div class="column-half">
-              <input type="image" class="width-100" src="images/placeholder-image-square.jpg">
+              <input type="image"
+                     class="width-100"
+                     src="images/placeholder-image-square.jpg">
             </div>
             <div class="column-half">
-              <label for="title" class="block f-gray pb">Title</label>
-              <input type="text" id="title" class="width-100">
-              <label for="url" class="block f-gray pt pb">Photo URL</label>
-              <input type="url" id="url" class="width-100">
+              <label for="title"
+                     class="block f-gray pb">Title</label>
+
+              <input type="text"
+                     required
+                     id="title"
+                     class="width-100">
+
+              <label for="url"
+                     class="block f-gray pt pb">Photo URL</label>
+
+              <input type="url"
+                     required
+                     id="url"
+                     class="width-100">
             </div>
           </div>
           <div class="row">
             <div class="column-full">
-              <label for="notes" class="f-gray pb">Notes</label>
-              <textarea class="block width-100" rows="10"></textarea>
+              <label for="notes"
+                     class="f-gray pb">Notes</label>
+              <textarea class="block width-100 mb-1rem remove-resize" rows="10" required></textarea>
+              <div class="save-btn text-right">
+                <button class="save-btn-style" type="submit">SAVE</button>
+              </div>
             </div>
           </div>
         </form>

@@ -35,6 +35,22 @@
   margin-bottom: 1rem;
 }
 
+.text-right {
+  text-align: end;
+}
+
+.save-btn-style {
+  background-color: rgb(86, 42, 129);
+  color: white;
+  border: 1px;
+  border-radius: 2px;
+  padding: 5px 12px;
+}
+
+.remove-resize {
+  resize: none;
+}
+
 label {
   font-weight: 900;
 }
