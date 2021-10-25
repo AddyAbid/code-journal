@@ -59,3 +59,13 @@ input {
   padding: 0.4rem 0;
   font-size: 1.2rem;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+.border-color:focus {
+  outline: none;
+  border-color: rgb(86, 42, 129);
+  box-shadow: 0 0 4px rgb(86, 42, 129);
+}

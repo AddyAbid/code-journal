@@ -18,8 +18,8 @@ $entryForm.addEventListener('submit', formSubmit);
 
 function formSubmit(event) {
   event.preventDefault();
-  var $formValues = {
 
+  var $formValues = {
     title: $entryForm.title.value,
     url: $entryForm.url.value,
     notes: $entryForm.notes.value,
