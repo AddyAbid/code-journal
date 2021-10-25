@@ -18,5 +18,15 @@ $entryForm.addEventListener('submit', formSubmit);
 
 function formSubmit(event) {
   event.preventDefault();
+  var $formValues = {
 
+    title: $entryForm.title.value,
+    url: $entryForm.url.value,
+    notes: $entryForm.notes.value,
+    nextEntry: data.nextEntryId
+  };
+  data.nextEntryId++;
+  data.entries.push($formValues);
+  $entryForm.reset();
+  $url.src = 'images/placeholder-image-square.jpg';
 }
