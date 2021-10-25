@@ -2,7 +2,23 @@
   background-color: rgb(86, 42, 129);
 }
 
-.font {
+.font-family {
   font-family: 'Roboto', sans-serif;
+}
+
+.f-white {
   color: white;
+}
+
+.f-gray {
+  color: rgb(49, 49, 49);
+  font-family: sans-serif;
+}
+
+.img-width {
+  width: 100%;
+}
+
+.block {
+  display: block;
 }
