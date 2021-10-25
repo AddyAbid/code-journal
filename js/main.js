@@ -23,10 +23,10 @@ function formSubmit(event) {
     title: $entryForm.title.value,
     url: $entryForm.url.value,
     notes: $entryForm.notes.value,
-    nextEntry: data.nextEntryId
+    entryId: data.nextEntryId
   };
   data.nextEntryId++;
   data.entries.push($formValues);
   $entryForm.reset();
-  $url.src = 'images/placeholder-image-square.jpg';
+  renderImage();
 }
