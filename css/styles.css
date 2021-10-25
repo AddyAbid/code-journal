@@ -1,0 +1,71 @@
+.bg-purple {
+  background-color: rgb(86, 42, 129);
+}
+
+.font-family {
+  font-family: 'Roboto', sans-serif;
+}
+
+.f-white {
+  color: white;
+}
+
+.f-gray {
+  color: rgb(49, 49, 49);
+  font-family: sans-serif;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.block {
+  display: block;
+}
+
+.pb {
+  padding-bottom: 0.5rem;
+}
+
+.pt {
+  padding-top: 2rem;
+}
+
+.mb-1rem {
+  margin-bottom: 1rem;
+}
+
+.text-right {
+  text-align: end;
+}
+
+.save-btn-style {
+  background-color: rgb(86, 42, 129);
+  color: white;
+  border: 1px;
+  border-radius: 2px;
+  padding: 5px 12px;
+}
+
+.remove-resize {
+  resize: none;
+}
+
+label {
+  font-weight: 900;
+}
+
+input {
+  padding: 0.4rem 0;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.border-color:focus {
+  outline: none;
+  border-color: rgb(86, 42, 129);
+  box-shadow: 0 0 4px rgb(86, 42, 129);
+}
