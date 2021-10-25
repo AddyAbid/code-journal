@@ -15,10 +15,31 @@
   font-family: sans-serif;
 }
 
-.img-width {
+.width-100 {
   width: 100%;
 }
 
 .block {
   display: block;
+}
+
+.pb {
+  padding-bottom: 0.5rem;
+}
+
+.pt {
+  padding-top: 2rem;
+}
+
+.mb-1rem {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 900;
+}
+
+input {
+  padding: 0.4rem 0;
+  font-size: 1.2rem;
 }

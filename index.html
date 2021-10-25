@@ -21,31 +21,39 @@
   <header>
     <div class="nav-container bg-purple">
       <div class="row">
-        <div class="column-full column-half container">
+        <div class="column-full container">
           <h2 class="font-family f-white">Code Journal</h2>
         </div>
       </div>
     </div>
   </header>
   <main>
-    <div class="entry-form-container">
+    <div class="entry-form-container container">
       <div data-view="entry-form">
         <div class="row">
-          <div class="column-full column-half container">
+          <div class="column-half ">
             <h1 class="f-gray">New Entry</h1>
-            <form>
-              <input type="image"
-                     src="images/placeholder-image-square.jpg"
-                     class="img-width">
-              <label for="title" class="font-family block">Title</label>
-              <input type="text" id="title">
-              <label for="url" class="block font-family">Photo URL</label>
-              <input type="url" id="url">
-              <label for="notes" class="block font-family">Notes</label>
-              <textarea id="notes" rows="8" cols="65"></textarea>
-            </form>
           </div>
         </div>
+        <form>
+          <div class="row mb-1rem">
+            <div class="column-half">
+              <input type="image" class="width-100" src="images/placeholder-image-square.jpg">
+            </div>
+            <div class="column-half">
+              <label for="title" class="block f-gray pb">Title</label>
+              <input type="text" id="title" class="width-100">
+              <label for="url" class="block f-gray pt pb">Photo URL</label>
+              <input type="url" id="url" class="width-100">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <label for="notes" class="f-gray pb">Notes</label>
+              <textarea class="block width-100" rows="10"></textarea>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </main>
