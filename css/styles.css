@@ -1,5 +1,6 @@
 .bg-purple {
   background-color: rgb(86, 42, 129);
+  padding: 1rem 0;
 }
 
 .font-family {
@@ -23,6 +24,14 @@
   display: block;
 }
 
+.mt-none {
+  margin-top: 0;
+}
+
+.mb-none {
+  margin-bottom: 0;
+}
+
 .pb {
   padding-bottom: 0.5rem;
 }
@@ -37,6 +46,15 @@
 
 .text-right {
   text-align: end;
+}
+
+.font-weight {
+  font-weight: 900;
+}
+
+.img-size {
+  height: 300px;
+  object-position: center;
 }
 
 .save-btn-style {
@@ -68,4 +86,15 @@ button:hover {
   outline: none;
   border-color: rgb(86, 42, 129);
   box-shadow: 0 0 4px rgb(86, 42, 129);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding-left: 2rem;
 }

@@ -22,14 +22,15 @@
     <div class="nav-container  container">
       <div class="row">
         <div class="column-full ">
-          <h2 class="font-family f-white">Code Journal</h2>
+          <h2 class="font-family f-white inline">Code Journal</h2>
+         <a href="#" class="button" data-view="entries">Entries</a>
         </div>
       </div>
     </div>
   </header>
   <main>
     <div class="entry-form-container container">
-      <div data-view="entry-form">
+      <div data-view="entry-form" class="view ">
         <div class="row">
           <div class="column-half ">
             <h1 class="f-gray">New Entry</h1>
@@ -68,11 +69,24 @@
                      class="f-gray pb">Notes</label>
               <textarea class="block width-100 mb-1rem remove-resize border-color" name="notes" rows="10" required></textarea>
               <div class="save-btn text-right">
-                <button class="save-btn-style" type="submit">SAVE</button>
+              <a href="#" >  <button class="save-btn-style save button" data-view="entries" type="submit">SAVE</button></a>
               </div>
             </div>
           </div>
         </form>
+      </div>
+      <div data-view="entries" class="view hidden">
+        <div class="row">
+          <div class="column-full">
+            <h2 class="f-gray mb-none">Entries</h2>
+            <div class="text-right align positioning">
+              <a href="#" class="button"><button data-view="entry-form" class="button save-btn-style inline new-btn">NEW</button></a>
+            </div>
+          </div>
+        </div>
+        <ul class="row">
+
+        </ul>
       </div>
     </div>
   </main>

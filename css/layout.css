@@ -13,6 +13,16 @@
   flex-wrap: wrap;
 }
 
+.inline {
+  display: inline;
+}
+
+.positioning {
+  position: absolute;
+  right: 50px;
+  top: 85px;
+}
+
 .column-full,
 .column-half {
   width: 100%;
