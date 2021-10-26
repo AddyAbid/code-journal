@@ -29,7 +29,7 @@ function formSubmit(event) {
   data.entries.push($formValues);
   $entryForm.reset();
   renderImage();
-  swapViews(event.target.getAttribute('data-view'));
+  swapViews(data.view);
 
 }
 
@@ -62,7 +62,7 @@ function renderEntry(entry) {
   $divRow.appendChild($divColHalf);
 
   var $img = document.createElement('img');
-  $img.setAttribute('class', 'width-100');
+  $img.setAttribute('class', 'width-100 img-size');
   $img.setAttribute('src', entry.url);
   $divColHalf.appendChild($img);
 
@@ -86,30 +86,37 @@ var $ul = document.querySelector('ul');
 
 window.addEventListener('DOMContentLoaded', createDOM);
 
-for (var i = 0; i < data.entries.length; i++) {
-  var eachEntry = renderEntry(data.entries[i]);
-}
-
 function createDOM(event) {
-  return $ul.appendChild(eachEntry);
+  for (var i = 0; i < data.entries.length; i++) {
+    var eachEntry = renderEntry(data.entries[i]);
+    $ul.appendChild(eachEntry);
+
+  }
+  swapViews(data.view);
 }
 
 var $view = document.querySelectorAll('.view');
 
-document.addEventListener('click', swapViews);
+document.addEventListener('click', viewHandler);
 
-function swapViews(event) {
-  if (!event.target.matches('.button')) {
-    return;
-  }
-  var viewClicked = event.target.getAttribute('data-view');
+function swapViews(viewName) {
 
   for (var i = 0; i < $view.length; i++) {
     var view = $view[i].getAttribute('data-view');
-    if (viewClicked === view) {
+
+    if (viewName === view) {
       $view[i].className = 'view';
     } else {
       $view[i].className = 'view hidden';
     }
   }
+  data.view = viewName;
+}
+
+function viewHandler(event) {
+  if (!event.target.matches('.button')) {
+    return;
+  }
+  swapViews(event.target.getAttribute('data-view'));
+
 }
