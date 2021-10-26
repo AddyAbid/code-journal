@@ -30,6 +30,7 @@ function formSubmit(event) {
   $entryForm.reset();
   renderImage();
   swapViews(event.target.getAttribute('data-view'));
+
 }
 
 /* <ul class="row">
@@ -111,5 +112,4 @@ function swapViews(event) {
       $view[i].className = 'view hidden';
     }
   }
-
 }
