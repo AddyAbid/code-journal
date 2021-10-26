@@ -17,15 +17,17 @@
   display: inline;
 }
 
-.positioning {
-  position: absolute;
-  right: 50px;
-  top: 85px;
+.ml {
+  margin-left: 18rem;
 }
 
 .column-full,
 .column-half {
   width: 100%;
+}
+
+.col-half {
+  width: 50%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -46,6 +48,10 @@
 
   .column-half {
     width: 50%;
+  }
+
+  .ml {
+    margin-left: 10rem;
   }
 }
 
