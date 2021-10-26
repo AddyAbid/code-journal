@@ -1,5 +1,6 @@
 .bg-purple {
   background-color: rgb(86, 42, 129);
+  padding: 1rem 0;
 }
 
 .font-family {
@@ -80,4 +81,11 @@ button:hover {
 
 li {
   list-style-type: none;
+}
+
+a {
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding-left: 2rem;
 }
