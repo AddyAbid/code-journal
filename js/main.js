@@ -30,7 +30,7 @@ function formSubmit(event) {
   $entryForm.reset();
   renderImage();
   swapViews(data.view);
-
+  location.reload();
 }
 
 /* <ul class="row">
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', createDOM);
 function createDOM(event) {
   for (var i = 0; i < data.entries.length; i++) {
     var eachEntry = renderEntry(data.entries[i]);
-    $ul.appendChild(eachEntry);
+    $ul.prepend(eachEntry);
 
   }
   swapViews(data.view);

@@ -52,6 +52,11 @@
   font-weight: 900;
 }
 
+.img-size {
+  height: 300px;
+  object-position: center;
+}
+
 .save-btn-style {
   background-color: rgb(86, 42, 129);
   color: white;
