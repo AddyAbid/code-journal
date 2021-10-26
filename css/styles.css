@@ -52,10 +52,6 @@
   font-weight: 900;
 }
 
-.img-size {
-  object-fit: contain;
-}
-
 .save-btn-style {
   background-color: rgb(86, 42, 129);
   color: white;
