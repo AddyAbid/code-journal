@@ -56,12 +56,12 @@ function renderEntry(entry) {
   $li.appendChild($divRow);
 
   var $divColHalf = document.createElement('div');
-  document.setAttribute('class', 'column-half');
+  $divColHalf.setAttribute('class', 'column-half');
   $divRow.appendChild($divColHalf);
 
   var $img = document.createElement('img');
   $img.setAttribute('class', 'width-100');
-  $img.setAttribute('src', entry.src);
+  $img.setAttribute('src', entry.url);
   $divColHalf.appendChild($img);
 
   var $divColHalf2 = document.createElement('div');
@@ -69,13 +69,25 @@ function renderEntry(entry) {
   $divRow.appendChild($divColHalf2);
 
   var $h2 = document.createElement('h2');
-  $h2.setAttribute('class', 'f-gray font-weight');
+  $h2.setAttribute('class', 'f-gray font-weight mt-none');
+  $h2.textContent = entry.title;
   $divColHalf2.appendChild($h2);
 
   var $description = document.createElement('p');
   $description.setAttribute('class', 'font-family');
+  $description.textContent = entry.notes;
   $divColHalf2.appendChild($description);
 
+  return $li;
 }
-var $ul = document.createElement('ul');
-$ul.setAttribute('class', 'row');
+var $ul = document.querySelector('ul');
+
+window.addEventListener('DOMContentLoaded', createDOM);
+
+for (var i = 0; i < data.entries.length; i++) {
+  var eachEntry = renderEntry(data.entries[i]);
+}
+
+function createDOM(event) {
+  return $ul.appendChild(eachEntry);
+}
