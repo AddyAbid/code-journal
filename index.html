@@ -23,14 +23,14 @@
       <div class="row">
         <div class="column-full ">
           <h2 class="font-family f-white inline">Code Journal</h2>
-         <a href="#">Entries</a>
+         <a href="#" class="button" data-view="entries">Entries</a>
         </div>
       </div>
     </div>
   </header>
   <main>
     <div class="entry-form-container container">
-      <div data-view="entry-form">
+      <div data-view="entry-form" class="view hidden">
         <div class="row">
           <div class="column-half ">
             <h1 class="f-gray">New Entry</h1>
@@ -75,12 +75,12 @@
           </div>
         </form>
       </div>
-      <div data-view="entries">
+      <div data-view="entries" class="view">
         <div class="row">
           <div class="column-full">
-            <h2 class="f-gray">Entries</h2>
+            <h2 class="f-gray mb-none">Entries</h2>
             <div class="text-right align">
-              <button class="save-btn-style">NEW</button>
+              <a href="#" class="button"><button data-view="entry-form" class="button save-btn-style inline new-btn">NEW</button></a>
             </div>
           </div>
         </div>

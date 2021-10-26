@@ -91,3 +91,24 @@ for (var i = 0; i < data.entries.length; i++) {
 function createDOM(event) {
   return $ul.appendChild(eachEntry);
 }
+
+var $view = document.querySelectorAll('.view');
+
+document.addEventListener('click', swapViews);
+
+function swapViews(event) {
+  if (!event.target.matches('.button')) {
+    return;
+  }
+  var viewClicked = event.target.getAttribute('data-view');
+
+  for (var i = 0; i < $view.length; i++) {
+    var view = $view[i].getAttribute('data-view');
+    if (viewClicked === view) {
+      $view[i].className = 'view';
+    } else {
+      $view[i].className = 'view hidden';
+    }
+  }
+
+}
