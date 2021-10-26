@@ -8,6 +8,10 @@
   padding: 0 1.5rem;
 }
 
+.align {
+  align-items: center;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;

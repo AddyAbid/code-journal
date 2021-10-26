@@ -39,6 +39,10 @@
   text-align: end;
 }
 
+.font-weight {
+  font-weight: 900;
+}
+
 .save-btn-style {
   background-color: rgb(86, 42, 129);
   color: white;
@@ -68,4 +72,8 @@ button:hover {
   outline: none;
   border-color: rgb(86, 42, 129);
   box-shadow: 0 0 4px rgb(86, 42, 129);
+}
+
+li {
+  list-style-type: none;
 }
