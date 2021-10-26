@@ -26,11 +26,11 @@ function formSubmit(event) {
     entryId: data.nextEntryId
   };
   data.nextEntryId++;
-  data.entries.push($formValues);
+  data.entries.unshift($formValues);
   $entryForm.reset();
   renderImage();
   swapViews(data.view);
-  location.reload();
+  $ul.prepend(renderEntry($formValues));
 }
 
 /* <ul class="row">
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', createDOM);
 function createDOM(event) {
   for (var i = 0; i < data.entries.length; i++) {
     var eachEntry = renderEntry(data.entries[i]);
-    $ul.prepend(eachEntry);
+    $ul.append(eachEntry);
 
   }
   swapViews(data.view);
