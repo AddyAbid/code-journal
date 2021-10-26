@@ -29,6 +29,7 @@ function formSubmit(event) {
   data.entries.push($formValues);
   $entryForm.reset();
   renderImage();
+  swapViews(event.target.getAttribute('data-view'));
 }
 
 /* <ul class="row">
