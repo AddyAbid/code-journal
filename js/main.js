@@ -143,4 +143,7 @@ function editForm(event) {
     return;
   }
   swapViews('entry-form');
+  for (var i = 0; i < data.entries.length; i++) {
+    data.editing = data.entries[i];
+  }
 }
