@@ -145,5 +145,9 @@ function editForm(event) {
   swapViews('entry-form');
   for (var i = 0; i < data.entries.length; i++) {
     data.editing = data.entries[i];
+    $entryForm.title.value = data.entries[i].title;
+    $entryForm.url.value = data.entries[i].url;
+    $url.src = data.entries[i].url;
+    $entryForm.notes.value = data.entries[i].notes;
   }
 }
