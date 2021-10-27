@@ -137,3 +137,7 @@ function viewHandler(event) {
   swapViews(event.target.getAttribute('data-view'));
 
 }
+$ul.addEventListener('click', editForm);
+function editForm(event) {
+
+}
