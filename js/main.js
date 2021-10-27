@@ -89,7 +89,7 @@ function renderEntry(entry) {
   $editDiv.appendChild($span);
 
   var $editPen = document.createElement('i');
-  $editPen.setAttribute('class', 'fas fa-pen ');
+  $editPen.setAttribute('class', 'fas fa-pen pen');
   $span.appendChild($editPen);
 
   var $description = document.createElement('p');
@@ -139,5 +139,8 @@ function viewHandler(event) {
 }
 $ul.addEventListener('click', editForm);
 function editForm(event) {
-
+  if (!event.target.matches('.pen')) {
+    return;
+  }
+  swapViews('entry-form');
 }
