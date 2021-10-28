@@ -175,9 +175,16 @@ function editForm(event) {
   }
 }
 $deleteButton.addEventListener('click', showModal);
+
 var $modalBox = document.querySelector('.modal-box');
 var $modal = document.querySelector('.overlay');
+var $cancelButton = document.querySelector('.cancel-button');
+$cancelButton.addEventListener('click', showModal);
 function showModal(event) {
   $modal.classList.remove('hidden');
   $modalBox.classList.remove('hidden');
+  if (event.target.matches('.cancel-button')) {
+    $modal.classList.add('hidden');
+    $modalBox.classList.add('hidden');
+  }
 }
