@@ -174,17 +174,25 @@ function editForm(event) {
     }
   }
 }
-$deleteButton.addEventListener('click', showModal);
 
 var $modalBox = document.querySelector('.modal-box');
 var $modal = document.querySelector('.overlay');
 var $cancelButton = document.querySelector('.cancel-button');
+var $confirmButton = document.querySelector('.confirm-button');
+
+$confirmButton.addEventListener('click', showModal);
 $cancelButton.addEventListener('click', showModal);
+$deleteButton.addEventListener('click', showModal);
+
 function showModal(event) {
   $modal.classList.remove('hidden');
   $modalBox.classList.remove('hidden');
   if (event.target.matches('.cancel-button')) {
     $modal.classList.add('hidden');
     $modalBox.classList.add('hidden');
+  } else if (event.target.matches('.confirm-button')) {
+    $modal.classList.add('hidden');
+    $modalBox.classList.add('hidden');
+    swapViews('entries');
   }
 }
