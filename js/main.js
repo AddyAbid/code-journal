@@ -154,11 +154,12 @@ function viewHandler(event) {
 }
 
 $ul.addEventListener('click', editForm);
-
+var $deleteButton = document.querySelector('.delete');
 function editForm(event) {
   if (!event.target.matches('.pen')) {
     return;
   }
+  $deleteButton.classList.remove('hidden');
   for (var i = 0; i < data.entries.length; i++) {
     if (data.entries[i].entryId === Number(event.target.closest('li').getAttribute('data-entry-id'))) {
       data.editing = data.entries[i];
@@ -167,7 +168,16 @@ function editForm(event) {
       $entryForm.notes.value = data.entries[i].notes;
       $url.src = data.entries[i].url;
       swapViews('entry-form');
+      var headerText = document.querySelector('.edit-text');
+      headerText.textContent = 'Edit Entry';
+
     }
   }
-
+}
+$deleteButton.addEventListener('click', showModal);
+var $modalBox = document.querySelector('.modal-box');
+var $modal = document.querySelector('.overlay');
+function showModal(event) {
+  $modal.classList.remove('hidden');
+  $modalBox.classList.remove('hidden');
 }
