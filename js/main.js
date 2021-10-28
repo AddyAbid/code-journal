@@ -25,14 +25,28 @@ function formSubmit(event) {
     notes: $entryForm.notes.value,
     entryId: data.nextEntryId
   };
-  data.nextEntryId++;
-  data.entries.unshift($formValues);
-  $entryForm.reset();
-  renderImage();
-  swapViews(data.view);
-  $ul.prepend(renderEntry($formValues));
-}
+  if (data.editing !== null) {
+    // for (var i = 0; i < data.entries.length; i++) {
+    // if (data.entries[i].entryId === data.editing.entryId) {
+    data.editing.title = $formValues.title;
+    data.editing.url = $formValues.url;
+    data.editing.notes = $formValues.notes;
+    $url.src = data.editing.url;
 
+    var matchingEditId = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
+    var newTree = renderEntry(data.editing);
+
+    matchingEditId.replaceWith(newTree);
+
+  } else {
+    data.nextEntryId++;
+    data.entries.unshift($formValues);
+    $entryForm.reset();
+    renderImage();
+    swapViews(data.view);
+    $ul.prepend(renderEntry($formValues));
+  }
+}
 /* <li class="column-full">
   <div class="row">
     <div class="column-half">
@@ -55,7 +69,8 @@ function formSubmit(event) {
 function renderEntry(entry) {
 
   var $li = document.createElement('li');
-  $li.setAttribute('class', 'column-full');
+  $li.setAttribute('class', 'column-full li');
+  $li.setAttribute('data-entry-id', entry.entryId);
   $ul.appendChild($li);
 
   var $divRow = document.createElement('div');
@@ -137,17 +152,22 @@ function viewHandler(event) {
   swapViews(event.target.getAttribute('data-view'));
 
 }
+
 $ul.addEventListener('click', editForm);
+
 function editForm(event) {
   if (!event.target.matches('.pen')) {
     return;
   }
-  swapViews('entry-form');
   for (var i = 0; i < data.entries.length; i++) {
-    data.editing = data.entries[i];
-    $entryForm.title.value = data.entries[i].title;
-    $entryForm.url.value = data.entries[i].url;
-    $url.src = data.entries[i].url;
-    $entryForm.notes.value = data.entries[i].notes;
+    if (data.entries[i].entryId === Number(event.target.closest('li').getAttribute('data-entry-id'))) {
+      data.editing = data.entries[i];
+      $entryForm.title.value = data.entries[i].title;
+      $entryForm.url.value = data.entries[i].url;
+      $entryForm.notes.value = data.entries[i].notes;
+      $url.src = data.entries[i].url;
+      swapViews('entry-form');
+    }
   }
+
 }
