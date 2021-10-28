@@ -26,8 +26,7 @@ function formSubmit(event) {
     entryId: data.nextEntryId
   };
   if (data.editing !== null) {
-    // for (var i = 0; i < data.entries.length; i++) {
-    // if (data.entries[i].entryId === data.editing.entryId) {
+
     data.editing.title = $formValues.title;
     data.editing.url = $formValues.url;
     data.editing.notes = $formValues.notes;
@@ -37,7 +36,7 @@ function formSubmit(event) {
     var newTree = renderEntry(data.editing);
 
     matchingEditId.replaceWith(newTree);
-
+    data.editing = null;
   } else {
     data.nextEntryId++;
     data.entries.unshift($formValues);
@@ -47,24 +46,6 @@ function formSubmit(event) {
     $ul.prepend(renderEntry($formValues));
   }
 }
-/* <li class="column-full">
-  <div class="row">
-    <div class="column-half">
-      <img class="width-100"
-        src="https://res.cloudinary.com/teepublic/image/private/s--17I0z7Hp--/c_scale,h_704/c_lpad,g_north_west,h_801,w_1802,x_174,y_48/c_crop,h_801,w_691,x_125/c_mfit,g_north_west,u_misc:Mug%20Effect%20Coffee3%20Left/e_displace,fl_layer_apply,x_14,y_-2/c_mfit,g_north_east,u_misc:Mug%20Effect%20Coffee3%20Right/e_displace,fl_layer_apply,x_-14,y_-2/c_crop,h_801,w_656/g_north_west,l_upload:v1466696262:production:blanks:w00xdkhjelyrnp8i8wxr,x_-410,y_-235/b_rgb:000000/c_limit,f_auto,h_630,q_90,w_630/v1539381322/production/designs/3309111_0.jpg">
-    </div>
-    <div class="column-half">
-
-      <h2 class="f-gray font-weight inline">Javascript Mug</h2>
-      <div class="text-right inline">
-        <span class="ml"><i class="fas fa-pen "></i></span>
-      </div>
-      <p class="font-family">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum neque sapiente,
-        nesciunt quaerat voluptatibus vitae sed provident ad odit error mollitia? Nemo at dolore expedita optio
-        corporis culpa inventore quisquam?</p>
-    </div>
-  </div>
-</li> */
 
 function renderEntry(entry) {
 
@@ -180,11 +161,11 @@ var $modal = document.querySelector('.overlay');
 var $cancelButton = document.querySelector('.cancel-button');
 var $confirmButton = document.querySelector('.confirm-button');
 
-$confirmButton.addEventListener('click', showModal);
-$cancelButton.addEventListener('click', showModal);
-$deleteButton.addEventListener('click', showModal);
+$confirmButton.addEventListener('click', deleteEntry);
+$cancelButton.addEventListener('click', deleteEntry);
+$deleteButton.addEventListener('click', deleteEntry);
 
-function showModal(event) {
+function deleteEntry(event) {
   $modal.classList.remove('hidden');
   $modalBox.classList.remove('hidden');
   if (event.target.matches('.cancel-button')) {
@@ -193,6 +174,14 @@ function showModal(event) {
   } else if (event.target.matches('.confirm-button')) {
     $modal.classList.add('hidden');
     $modalBox.classList.add('hidden');
+    var matchingEntry = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === Number(matchingEntry.getAttribute('data-entry-id'))) {
+        data.entries.splice(i, 1);
+        matchingEntry.remove();
+        data.editing = null;
+      }
+    }
     swapViews('entries');
   }
 }
