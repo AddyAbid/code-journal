@@ -162,16 +162,11 @@ var $cancelButton = document.querySelector('.cancel-button');
 var $confirmButton = document.querySelector('.confirm-button');
 
 $confirmButton.addEventListener('click', deleteEntry);
-$cancelButton.addEventListener('click', deleteEntry);
-$deleteButton.addEventListener('click', deleteEntry);
+$cancelButton.addEventListener('click', closeModal);
+$deleteButton.addEventListener('click', openModal);
 
 function deleteEntry(event) {
-  $modal.classList.remove('hidden');
-  $modalBox.classList.remove('hidden');
-  if (event.target.matches('.cancel-button')) {
-    $modal.classList.add('hidden');
-    $modalBox.classList.add('hidden');
-  } else if (event.target.matches('.confirm-button')) {
+  if (event.target.matches('.confirm-button')) {
     $modal.classList.add('hidden');
     $modalBox.classList.add('hidden');
     var matchingEntry = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
@@ -184,4 +179,14 @@ function deleteEntry(event) {
     }
     swapViews('entries');
   }
+}
+
+function openModal(event) {
+  $modal.classList.remove('hidden');
+  $modalBox.classList.remove('hidden');
+}
+
+function closeModal(event) {
+  $modal.classList.add('hidden');
+  $modalBox.classList.add('hidden');
 }
