@@ -44,6 +44,16 @@
   padding-top: 2rem;
 }
 
+.delete {
+  color: red;
+  border-bottom: 1px solid red;
+  padding-left: 0;
+}
+
+.delete:hover {
+  cursor: pointer;
+}
+
 .mt-1rem {
   margin-top: 1rem;
 }
@@ -54,6 +64,10 @@
 
 .text-right {
   text-align: end;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .font-weight {
@@ -75,6 +89,61 @@
 
 .remove-resize {
   resize: none;
+}
+
+.mt-ml {
+  margin-top: 2.5rem;
+  margin-left: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal-box {
+  background-color: white;
+  position: fixed;
+  width: 400px;
+  height: 150px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.delete-entry {
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}
+
+.cancel-button {
+  background-color: rgb(182, 182, 182);
+  color: black;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px;
+}
+
+.confirm-button {
+  background-color: rgb(220, 38, 37);
+  color: white;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px;
+}
+
+.pl {
+  padding-left: 3.7rem;
 }
 
 label {
