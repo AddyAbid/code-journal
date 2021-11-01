@@ -167,8 +167,7 @@ $deleteButton.addEventListener('click', openModal);
 
 function deleteEntry(event) {
   if (event.target.matches('.confirm-button')) {
-    $modal.classList.add('hidden');
-    $modalBox.classList.add('hidden');
+    closeModal();
     var matchingEntry = document.querySelector('[data-entry-id="' + data.editing.entryId + '"]');
     for (var i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === Number(matchingEntry.getAttribute('data-entry-id'))) {
